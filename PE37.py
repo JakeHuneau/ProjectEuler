@@ -1,4 +1,4 @@
-from Primes import *
+from util.Primes import *
 
 
 def get_all_truncs(n):

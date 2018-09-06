@@ -1,4 +1,4 @@
-from Primes import *
+from util.Primes import *
 
 
 def find_smallest(all_comps, primes):

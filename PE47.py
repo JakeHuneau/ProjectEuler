@@ -1,6 +1,3 @@
-from Primes import *
-
-
 def npf(number):
     """function which will return
     the number of prime factors"""

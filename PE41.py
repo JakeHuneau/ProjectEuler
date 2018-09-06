@@ -1,4 +1,4 @@
-from Primes import *
+from util.Primes import *
 
 
 def is_pandigital(n, upto=9):

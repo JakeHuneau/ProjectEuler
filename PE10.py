@@ -1,4 +1,4 @@
-from Primes import sieve_of_eratosthenes
+from util.Primes import sieve_of_eratosthenes
 
 
 def main():
