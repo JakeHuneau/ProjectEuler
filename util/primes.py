@@ -48,7 +48,11 @@ def is_prime_arr(n):
 
 
 def factors(n):
-    return set(sorted(list((reduce(list.__add__, ([i, n//i] for i in range(1, int(n**0.5)+1) if n % i == 0)))))[1:-1])
+    facts = set()
+    for i in range(1, int(n ** 0.5) + 1):
+        if not n % i:
+            facts.update({i, n//i})
+    return facts
 
 
 def prime_factors(n):

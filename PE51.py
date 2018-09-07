@@ -1,7 +1,7 @@
 import time
 from itertools import product
 
-from util.Primes import *
+from util.primes import *
 
 
 def all_locations(num_spots):

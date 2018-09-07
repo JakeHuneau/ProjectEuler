@@ -1,6 +1,6 @@
 import time
 
-from util.Primes import *
+from util.primes import *
 
 
 def main():

@@ -3,7 +3,7 @@
 
 import time
 
-from util.Primes import is_prime
+from util.primes import is_prime
 
 
 def main():

@@ -1,6 +1,6 @@
 # Use Fermat's little theorem and prime fact that decimal expansion of 1/p is periodic with period length equal to
 # e = order of 10 modulo p: e is smallest pos int such that 10^e is equiv 1 (mod p)
-from util.Primes import sieve_of_eratosthenes
+from util.primes import sieve_of_eratosthenes
 
 def main():
     possible_nums = sieve_of_eratosthenes(1000)[::-1]
