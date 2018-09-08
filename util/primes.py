@@ -4,8 +4,34 @@ Functions concerning prime numbers
 
 import numpy as np
 import random
+from collections import defaultdict
 
 from util.tools import factors
+
+
+def prime_generator():
+    """
+    Generates prime numbers by tracking composite numbers
+
+    Yields:
+        prime numbers
+    """
+    composites = defaultdict(list)  # {composite: factor}
+    candidate = 2
+
+    while True:  # Run forever
+
+        if candidate not in composites:  # Must be prime
+            yield candidate
+            composites[candidate * candidate].append(candidate)  # square it since this is known composite
+
+        else:  # Has factors
+            for c in composites[candidate]:
+                composites[c + candidate].append(c)
+
+            del composites[candidate]  # clear space
+
+        candidate += 1
 
 
 def sieve_of_eratosthenes(n: int) -> list:
