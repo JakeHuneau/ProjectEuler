@@ -2,7 +2,7 @@
 Other tools
 """
 
-def factors(n: int) -> set:
+def factors(n: int, edges: bool = False) -> set:
     """
     Calculates all the factors of n
 
@@ -16,6 +16,9 @@ def factors(n: int) -> set:
     for i in range(1, int(n ** 0.5) + 1):
         if not n % i:
             facts.update({i, n//i})
+    if not edges:
+        facts.remove(1)
+        facts.remove(n)
     return facts
 
 
