@@ -67,3 +67,10 @@ def palindromes_of_length(n: int) -> list:
         palis += [f'{i}{p}{i}' for i in palindromes_of_length(1)]
 
     return palis
+
+def sum_of_digits(n: int) -> int:
+    """
+    Sums the digits of a number.
+    EX: sum_of_digits(232) = 2 + 3 + 2 = 7
+    """
+    return sum(int(i) for i in str(n))
