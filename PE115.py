@@ -15,5 +15,10 @@ def F(tot_len, min_block):
     return sols
 
 
-known = [-1] * 51
-print(F(50, 3))
+n = 51
+known = [-1] * (n + 1)
+while F(n, 50) < 1000000:
+    n += 1
+    known = [-1] * (n + 1)
+
+print(n)
