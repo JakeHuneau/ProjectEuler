@@ -1,44 +1,45 @@
+"""
+Functions concerning prime numbers
+"""
+
 import numpy as np
-from functools import reduce
 import random
 
+from util.tools import factors
 
-def sieve_of_eratosthenes(n, start=2):
+
+def sieve_of_eratosthenes(n: int) -> list:
     """
     Uses Sieve of Eratosthenes to calculate all prime numbers up to n
-    Parameters
-    ----------
-    n: (integer) Calculate primes up to this
 
-    Returns
-    -------
-    primes: (list) list of prime numbers
+    Args:
+        n (int): Calculate primes up to this
+
+    Returns:
+        (list) prime numbers
     """
-    if n <= 2:
+    if n < 2:
         return []
+
     primes = [True] * (n+1)
 
-    if start & 1 == 1:
-        start += 1
-
-    for x in range(start, int(np.sqrt(n))+1, 2):
+    for x in range(3, int(np.sqrt(n))+1, 2):
         for y in range(3, (n//x)+1, 2):
             primes[(x*y)] = False
 
     return [2] + [i for i in range(3, n, 2) if primes[i]]
 
 
-def is_prime_arr(n):
+def is_prime_arr(n: int) -> list:
     """
     Uses Sieve of Eratosthenes to calculate list of primes up to n. Format is an array of length
     n that is True for prime index and False for non-prime.
-    Parameters
-    ----------
-    n: Length of array
 
-    Returns
-    -------
-    P: List of length n that is true for prime indexes and false for non-primes
+    Args:
+        n (int): Length of array
+
+    Returns:
+        (list) of length n that is true for prime indexes and false for non-primes
     """
     primes = sieve_of_eratosthenes(n)
     P = [False] * n
@@ -47,15 +48,16 @@ def is_prime_arr(n):
     return P
 
 
-def factors(n):
-    facts = set()
-    for i in range(1, int(n ** 0.5) + 1):
-        if not n % i:
-            facts.update({i, n//i})
-    return facts
+def prime_factors(n: int) -> set:
+    """
+    Gets a set of prime factors of n
 
+    Args:
+        n (int): number to factorize
 
-def prime_factors(n):
+    Returns:
+        (set) of prime factors
+    """
     P = is_prime_arr(n)
     facts = factors(n)
     prime_facts = set()
@@ -67,7 +69,16 @@ def prime_factors(n):
     return prime_facts
 
 
-def is_prime(n):
+def is_prime(n: int) -> bool:
+    """
+    Checks if n is prime
+
+    Args:
+        n (int): number to check
+
+    Returns:
+        (bool) if n is prime
+    """
     if n <= 1:
         return False
     if n <= 3:
@@ -82,7 +93,16 @@ def is_prime(n):
     return True
 
 
-def miller_rabin(n):
+def miller_rabin(n: int) -> bool:
+    """
+    Checks if n is prime using miller_rabin technique
+
+    Args:
+        n (int): number to check if prime
+
+    Returns:
+        (bool) if prime
+    """
     if n == 1:
         return False
     if n <= 3:

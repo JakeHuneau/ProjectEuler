@@ -1,4 +1,4 @@
-from util.Project_Euler import *
+from util.figurate import *
 
 
 def func_set(func):
