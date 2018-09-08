@@ -8,3 +8,7 @@
 .idea/workspace.xml
 
 venv/
+
+*.pyc
+
+.gitignore
