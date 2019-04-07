@@ -1,5 +1,8 @@
 """
 What is the 10 001st prime number?
+
+:Thoughts:
+Use a prime generator
 """
 from util.primes import prime_generator
 

@@ -1,3 +1,8 @@
+"""
+What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally)
+in the 20×20 grid?
+"""
+
 block_str = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
@@ -20,7 +25,7 @@ block_str = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48"""
 
 
-def main():
+def pe11():
     matrix = [list(map(int, col.split(' '))) for col in block_str.split('\n')]
     greatest_product = 0
 
@@ -46,4 +51,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    pe11()

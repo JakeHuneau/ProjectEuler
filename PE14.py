@@ -7,13 +7,8 @@ n -> 3n + 1 (odd n)
 :thoughts:
 Just cache the length of a sequence in a dict so not to repeat stuff
 """
+from util.algorithms import next_collatz
 
-def next_collatz(n: int) -> int:
-    """Find next number in collatz sequence"""
-    if not n % 2:
-        return n // 2
-    else:
-        return 3 * n + 1
 
 def pe14():
     collatz_len = dict()  # {num: length of sequence}
@@ -28,6 +23,7 @@ def pe14():
             count += 1
         collatz_len[i] = count
     print(max(collatz_len, key=lambda key: collatz_len[key]))
+
 
 if __name__ == '__main__':
     pe14()

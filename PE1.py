@@ -9,6 +9,7 @@ def pe_1():
         if not i % 3 or not i % 5:
             sum += i
     print(sum)
-    
+
+
 if __name__ == "__main__":
     pe_1()

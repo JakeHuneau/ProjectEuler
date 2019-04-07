@@ -2,7 +2,6 @@
 Functions concerning prime numbers
 """
 
-import numpy as np
 import random
 from collections import defaultdict
 
@@ -14,7 +13,7 @@ def prime_generator():
     Generates prime numbers by tracking composite numbers
 
     Yields:
-        prime numbers
+        (int) prime numbers
     """
     composites = defaultdict(list)  # {composite: factor}
     candidate = 2
@@ -49,7 +48,7 @@ def sieve_of_eratosthenes(n: int) -> list:
 
     primes = [True] * (n+1)
 
-    for x in range(3, int(np.sqrt(n))+1, 2):
+    for x in range(3, int(n ** 0.5)+1, 2):
         for y in range(3, (n//x)+1, 2):
             primes[(x*y)] = False
 

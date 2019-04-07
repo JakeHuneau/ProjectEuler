@@ -1,4 +1,10 @@
+"""
+Find the thirteen adjacent digits in the 1000-digit number that have the greatest product.
+What is the value of this product?
 
+:Thoughts:
+Brute force
+"""
 
 num = ('73167176531330624919225119674426574742355349194934'
        '96983520312774506326239578318016984801869478851843'
@@ -34,11 +40,11 @@ def multiply_str(int_str):
         product *= int(i)
     return product
 
-def main():
+def pe8():
     num_list = break_thirteen(num)
     products = [multiply_str(i) for i in num_list]
     print(max(products))
 
 
 if __name__ == '__main__':
-    main()
+    pe8()

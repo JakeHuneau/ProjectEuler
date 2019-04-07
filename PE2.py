@@ -20,7 +20,8 @@ def fibonacci_gen():
     while True:
         yield f1
         f1, f0 = f0 + f1, f1
-    
+
+
 def pe_2(max_val: int):
     res = 0
     for f in fibonacci_gen():
@@ -30,6 +31,7 @@ def pe_2(max_val: int):
         else:
             break
     print(res)
-    
+
+
 if __name__ == "__main__":
     pe_2(4_000_000)
